@@ -18,7 +18,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="257,73,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="257,140,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top"/>
         <Button Content="Add To Cart" HorizontalAlignment="Left" Margin="670,190,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Print Reciept" HorizontalAlignment="Left" Margin="670,377,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Print Reciept" HorizontalAlignment="Left" Margin="670,377,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Content="Item Total" HorizontalAlignment="Left" Margin="407,379,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="0.00" HorizontalAlignment="Left" Margin="476,379,0,0" VerticalAlignment="Top" Width="64 " Name="lbTotal"/>
         <Menu HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="795">

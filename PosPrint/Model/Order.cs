@@ -22,5 +22,8 @@ namespace PosPrint
         {
             get { return Quantity * Price; }
         }
+
+      //Acts as an in memory db  
+      public static List<Order> orders = new List<Order>();
     }
 }
