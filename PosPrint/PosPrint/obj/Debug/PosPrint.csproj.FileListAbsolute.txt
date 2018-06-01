@@ -1,0 +1,64 @@
+c:\users\devadmin\source\repos\PosPrint\PosPrint\bin\Debug\PosPrint.exe.config
+c:\users\devadmin\source\repos\PosPrint\PosPrint\bin\Debug\PosPrint.exe
+c:\users\devadmin\source\repos\PosPrint\PosPrint\bin\Debug\PosPrint.pdb
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.csprojAssemblyReference.cache
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\App.g.cs
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint_MarkupCompile.cache
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint_MarkupCompile.lref
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.g.resources
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.Properties.Resources.resources
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.csproj.GenerateResource.cache
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.csproj.CoreCompileInputs.cache
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.exe
+c:\users\devadmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.pdb
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\bin\Debug\stdole.dll
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\obj\Debug\PosPrint.csproj.CopyComplete
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\obj\Debug\MainWindow.g.cs
+C:\Users\DevAdmin\source\repos\PosPrint\PosPrint\obj\Debug\MainWindow.baml
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\PosPrint.exe.config
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\PosPrint.exe
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\PosPrint.pdb
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\bin\Debug\stdole.dll
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.csprojAssemblyReference.cache
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\MainWindow.g.cs
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\App.g.cs
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint_MarkupCompile.cache
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint_MarkupCompile.lref
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\MainWindow.baml
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.g.resources
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.Properties.Resources.resources
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.csproj.GenerateResource.cache
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.csproj.CoreCompileInputs.cache
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.csproj.CopyComplete
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.exe
+C:\Users\u\Desktop\New folder\PosPrint\PosPrint\obj\Debug\PosPrint.pdb
