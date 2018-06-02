@@ -36,6 +36,9 @@ namespace PosPrint
             
             });
             MessageBox.Show("Business Setup Successfully");
+            this.Hide();
+            var main = new MainWindow();
+            main.Show();
         }
     }
 }

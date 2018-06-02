@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosPrint.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -19,28 +20,44 @@ namespace PosPrint
         public MainWindow()
         {
             InitializeComponent();
+            var businessInfo = Model.Business.Businesses.FirstOrDefault();
+            Title = $"POS Print: This software is licensed to {businessInfo.BusinessName}";
         }
+        decimal payable = 0;//this is the total amount to be payed
+        decimal tendered =0;// this is the ammount presented to the cashier
+        decimal balance = 0;// this is the change to be offerd to customer
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
 
             Order.orders.Add(new Order
             {
                 ProductName = txtProduct.Text,
                 Quantity = Decimal.Parse(txtQuantity.Text),
-                Price = Decimal.Parse(txtPrice.Text),
-                ProductDescribtion = txtDescription.Text
+                Price = Decimal.Parse(txtPrice1.Text),
+                ProductDescribtion = txtDescription.Text,
+                             
             });
 
             dgCart.ItemsSource = Order.orders;
             dgCart.Items.Refresh();
 
-            var total = Order.orders.Sum(x => x.Amount);
-            lbTotal.Content = total;
+            var total = Math.Round(Order.orders.Sum(x => x.Amount),2);
+            var tax = total * Order.Tax;
+            var discount = total * Order.Discount;
+            var subtotal = (total + tax)-discount;
+            payable = Math.Round(subtotal, 2);
+            
+           
 
+            txtSubtotal.Text = total.ToString();
+            txtTax.Text = tax.ToString();
+            txtDiscount.Text = discount.ToString();
+            lbTotal.Content = payable;
+            
+            txtQuantity.Clear();
             txtDescription.Clear();
-            txtPrice.Clear();
+            txtPrice1.Clear();
             txtProduct.Clear();
 
             //dgCart.DataContext = cart;
@@ -70,6 +87,7 @@ namespace PosPrint
         public void ProvideContent(object sender, PrintPageEventArgs e)
         {
 
+            tendered = Math.Round(Decimal.Parse(txtTendered.Text));//
 
             decimal total = decimal.Parse(lbTotal.Content.ToString());
             var receiptItems = Order.orders;
@@ -79,8 +97,9 @@ namespace PosPrint
 
 
             var sb = new StringBuilder();
+            var business = new Business();
             //replace with item.Branch
-            sb.AppendLine(("Company"));
+            sb.AppendLine((business.BusinessName));
             sb.AppendLine(" ");
             sb.AppendLine(("TAX INVOICE:  "));
             sb.AppendLine(" ");
@@ -143,6 +162,15 @@ namespace PosPrint
             Offset = Offset + 20;
         }
 
+        private void txtTendered_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(txtBalance.Text != null)
+            {
+                //txtTendered.Text = Math.Round(Decimal.Parse(txtTendered.Text), 2).ToString();
+                tendered = Math.Round(Decimal.Parse(txtTendered.Text));//
+                txtBalance.Text = (tendered- payable).ToString();//
 
+            }
+        }
     }
 }

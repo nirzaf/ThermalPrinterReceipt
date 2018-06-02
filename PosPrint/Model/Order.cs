@@ -20,11 +20,24 @@ namespace PosPrint
       public decimal Price { get; set; }
      
       public decimal Amount
-        {
+      {
             get { return Quantity * Price; }
+      }
+
+       public static  decimal Tax {
+
+            get { return 0.175m ; }
+            set { }
         }
 
-      //Acts as an in memory db  
-      public static List<Order> orders = new List<Order>();
+       public static decimal Discount
+       {
+            get { return 0.05m; }
+            set { }
+       }
+
+ 
+        //Acts as an in memory db  
+        public static List<Order> orders = new List<Order>();
     }
 }
