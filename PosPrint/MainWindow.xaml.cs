@@ -93,7 +93,7 @@ namespace PosPrint
             sb.AppendLine((": "));
             sb.AppendLine(" ");
             //sb.AppendLine("=".PadRight(35,'='));
-            sb.Append(("ITEM").PadLeft(13));
+            sb.Append(("ITEM").PadLeft(15));
             sb.Append(("QTY").PadLeft(FIRST_COL_PAD));
             sb.Append(("PRICE").PadLeft(SECOND_COL_PAD));
             sb.AppendLine(("GH?").PadLeft(THIRD_COL_PAD));
@@ -116,7 +116,7 @@ namespace PosPrint
 
                     pd = item.ProductName;
                 }
-                sb.Append(pd.PadLeft(13));
+                sb.Append(pd.PadLeft(15));
                 sb.Append(item.Quantity.ToString().PadLeft(FIRST_COL_PAD));
                 sb.Append((item.Price).ToString("F", CultureInfo.InvariantCulture).PadLeft(SECOND_COL_PAD));
                 sb.AppendLine((string.Format("{0:0.00}", item.Amount)).ToString().PadLeft(THIRD_COL_PAD));
