@@ -64,7 +64,7 @@ namespace PosPrint
             doc.PrintPage += new PrintPageEventHandler(ProvideContent);
             //var pd = new PrintDialog();
             //pd.ShowDialog();
-            doc.Print(); 
+            doc.Print();
         }
 
         public void ProvideContent(object sender, PrintPageEventArgs e)
@@ -88,7 +88,7 @@ namespace PosPrint
             sb.AppendLine(("TEL: 0204355610 & 0204355608 "));
             sb.AppendLine(" ");
             sb.Append(("DATE").PadRight(8));
-            sb.AppendLine(": "+DateTime.Now);
+            sb.AppendLine(": " + DateTime.Now);
             sb.Append(("CASHIER").PadRight(8));
             sb.AppendLine((": "));
             sb.AppendLine(" ");
@@ -96,42 +96,42 @@ namespace PosPrint
             sb.Append(("ITEM").PadLeft(13));
             sb.Append(("QTY").PadLeft(FIRST_COL_PAD));
             sb.Append(("PRICE").PadLeft(SECOND_COL_PAD));
-            sb.AppendLine(("GH₵").PadLeft(THIRD_COL_PAD));
+            sb.AppendLine(("GH?").PadLeft(THIRD_COL_PAD));
             sb.AppendLine("-".PadRight(60, '-'));
-           
+
 
             foreach (var item in receiptItems)
             {
-               
+
                 string pd = "";
                 if (item.ProductName.Length > 15)
                 {
-                  
+
                     pd = item.ProductName.Substring(0, 15);
 
-                    
+
                 }
                 else
                 {
-                   
+
                     pd = item.ProductName;
                 }
                 sb.Append(pd.PadLeft(13));
                 sb.Append(item.Quantity.ToString().PadLeft(FIRST_COL_PAD));
-                sb.Append((item.Price).ToString("F",CultureInfo.InvariantCulture).PadLeft(SECOND_COL_PAD));
+                sb.Append((item.Price).ToString("F", CultureInfo.InvariantCulture).PadLeft(SECOND_COL_PAD));
                 sb.AppendLine((string.Format("{0:0.00}", item.Amount)).ToString().PadLeft(THIRD_COL_PAD));
             }
             sb.AppendLine("-".PadRight(60, '-'));
-            sb.Append("Sub Total:".PadLeft(13+FIRST_COL_PAD+ SECOND_COL_PAD));
-            sb.AppendLine(string.Format("{0:0.00}",total));
-            sb.AppendLine("VAT @ 17.50%: ".PadLeft(13+FIRST_COL_PAD + SECOND_COL_PAD));
+            sb.Append("Sub Total:".PadLeft(13 + FIRST_COL_PAD + SECOND_COL_PAD));
+            sb.AppendLine(string.Format("{0:0.00}", total));
+            sb.AppendLine("VAT @ 17.50%: ".PadLeft(13 + FIRST_COL_PAD + SECOND_COL_PAD));
             sb.AppendLine("=".PadRight(50, '='));
-            sb.AppendLine("Bill Total:".PadLeft(15+FIRST_COL_PAD + SECOND_COL_PAD));
+            sb.AppendLine("Bill Total:".PadLeft(15 + FIRST_COL_PAD + SECOND_COL_PAD));
 
             sb.AppendLine("=".PadRight(50, '='));
 
 
-            var printText = new PrintText(sb.ToString(), new Font(System.Drawing.FontFamily.GenericMonospace, 9,System.Drawing.FontStyle.Bold));
+            var printText = new PrintText(sb.ToString(), new Font(System.Drawing.FontFamily.GenericMonospace, 9, System.Drawing.FontStyle.Bold));
             Graphics graphics = e.Graphics;
             int startX = 0;
             int startY = 0;
@@ -142,8 +142,8 @@ namespace PosPrint
             Offset = Offset + 20;
         }
 
-       
-        
+
+
 
     }
 }
