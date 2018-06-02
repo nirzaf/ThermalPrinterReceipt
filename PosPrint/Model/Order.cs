@@ -18,6 +18,7 @@ namespace PosPrint
       public string ProductDescribtion { get; set; }
       public decimal Quantity { get; set; }
       public decimal Price { get; set; }
+     
       public decimal Amount
         {
             get { return Quantity * Price; }

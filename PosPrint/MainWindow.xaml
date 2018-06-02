@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PosPrint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1915.6">
-    <Grid>
+        Title="MainWindow" Height="638" Width="925.6">
+    <Grid Margin="0,0,5.2,-17.2">
 
-        <DataGrid x:Name="dgCart" HorizontalAlignment="Left" Height="100" Margin="10,257,0,0" VerticalAlignment="Top" Width="1891"/>
+        <DataGrid x:Name="dgCart" HorizontalAlignment="Left" Height="100" Margin="10,257,0,0" VerticalAlignment="Top" Width="892"/>
         <TextBox x:Name="txtProduct" HorizontalAlignment="Left" Height="23" Margin="90,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="90,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Height="23" Margin="339,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -17,18 +17,22 @@
         <TextBlock HorizontalAlignment="Left" Margin="23,134,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="257,73,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="257,140,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top"/>
-        <Button Content="Add To Cart" HorizontalAlignment="Left" Margin="670,190,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Print Reciept" HorizontalAlignment="Left" Margin="670,377,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Label Content="Item Total" HorizontalAlignment="Left" Margin="407,379,0,0" VerticalAlignment="Top" Width="64"/>
-        <Label Content="0.00" HorizontalAlignment="Left" Margin="476,379,0,0" VerticalAlignment="Top" Width="64 " Name="lbTotal"/>
-        <DockPanel>
-        <Menu HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="795">
-            <MenuItem Name="File" Header="_File">
-                <MenuItem Header="About">
-
-                </MenuItem>
-            </MenuItem>
-        </Menu>
-        </DockPanel>
+        <Button Content="Add To Cart" HorizontalAlignment="Left" Margin="827,216,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Print Reciept" HorizontalAlignment="Left" Margin="827,556,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Label Content="0.00" HorizontalAlignment="Left" Margin="857,483,0,0" VerticalAlignment="Top" Width="45" Name="lbTotal" RenderTransformOrigin="1.191,0.723"/>
+        <DockPanel Margin="0,0,1114.8,9.8"/>
+        <TextBox x:Name="txtPrice_Copy" HorizontalAlignment="Left" Height="23" Margin="90,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,134,0,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSubtotal" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="461,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="375,400,0,0" TextWrapping="Wrap" Text="Subtotal" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTax" HorizontalAlignment="Left" Height="23" Margin="461,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="394,435,0,0" TextWrapping="Wrap" Text="Tax" VerticalAlignment="Top" Height="22"/>
+        <TextBox x:Name="txtDiscount" HorizontalAlignment="Left" Height="23" Margin="461,478,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="373,478,0,0" TextWrapping="Wrap" Text="Discount" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTendered" HorizontalAlignment="Left" Height="23" Margin="782,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="696,400,0,0" TextWrapping="Wrap" Text="Tendered" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBalance" IsReadOnly="True" HorizontalAlignment ="Left" Height="23" Margin="782,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="704,441,0,0" TextWrapping="Wrap" Text="Balance" VerticalAlignment="Top"/>
+        <Label Content="Reciept Total:" HorizontalAlignment="Left" Margin="782,483,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

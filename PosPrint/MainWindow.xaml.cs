@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace PosPrint
 {
@@ -54,42 +57,92 @@ namespace PosPrint
         {
             var doc = new PrintDocument();
             var paperSize = new PaperSize("Custom", 520, 820);
-            doc.DefaultPageSettings.PaperSize= paperSize;
+            doc.DefaultPageSettings.PaperSize = paperSize;
+            //doc.DefaultPageSettings.PaperSize.Kind = PaperKind.Custom;
+            //doc.DefaultPageSettings.PaperSize.Height = 820;
+            //doc.DefaultPageSettings.PaperSize.Width = 520;
             doc.PrintPage += new PrintPageEventHandler(ProvideContent);
-            doc.Print(); ;
+            //var pd = new PrintDialog();
+            //pd.ShowDialog();
+            doc.Print();
         }
 
         public void ProvideContent(object sender, PrintPageEventArgs e)
         {
 
-            var cart = Order.orders;
+
+            decimal total = decimal.Parse(lbTotal.Content.ToString());
+            var receiptItems = Order.orders;
+            const int FIRST_COL_PAD = 5;
+            const int SECOND_COL_PAD = 7;
+            const int THIRD_COL_PAD = 8;
 
 
-       
-            Graphics graphics = e.Graphics;
-            Font font = new Font("Courier New", 8);
-            //Draw Boundry
-            Rectangle bounds= new Rectangle();
-            bounds.X = 10;
-            bounds.Y = 10;
-            bounds.Offset(10, 10);
+            var sb = new StringBuilder();
+            //replace with item.Branch
+            sb.AppendLine(("Company"));
+            sb.AppendLine(" ");
+            sb.AppendLine(("TAX INVOICE:  "));
+            sb.AppendLine(" ");
+            sb.AppendLine(("ACCRA GHANA").PadLeft(20));
+            sb.AppendLine(("Vat Reg. No.:  "));
+            sb.AppendLine(("TEL: 0204355610 & 0204355608 "));
+            sb.AppendLine(" ");
+            sb.Append(("DATE").PadRight(8));
+            sb.AppendLine(": " + DateTime.Now);
+            sb.Append(("CASHIER").PadRight(8));
+            sb.AppendLine((": "));
+            sb.AppendLine(" ");
+            //sb.AppendLine("=".PadRight(35,'='));
+            sb.Append(("ITEM").PadLeft(15));
+            sb.Append(("QTY").PadLeft(FIRST_COL_PAD));
+            sb.Append(("PRICE").PadLeft(SECOND_COL_PAD));
+            sb.AppendLine(("GH?").PadLeft(THIRD_COL_PAD));
+            sb.AppendLine("-".PadRight(60, '-'));
 
-            DrawReciept(cart, graphics, font, bounds);
-        }
 
-
-        void DrawReciept(List<Order> cart, Graphics g, Font font, Rectangle bounds)
-        {
-            foreach (var item in cart)
+            foreach (var item in receiptItems)
             {
-                LineDisplay display = new LineDisplay(g, font, bounds);
-                display.WriteTwoColumnLine("User Name:", item.ProductName);
-                display.WriteTwoColumnLine("Full Name:", item.ProductDescribtion);
-                display.WriteTwoColumnLine("E-mail:", item.Quantity.ToString());
-                display.WriteTwoColumnLine("Phone:", item.Price.ToString());
-                display.WriteTwoColumnLine("Phone:", item.Amount.ToString());
+
+                string pd = "";
+                if (item.ProductName.Length > 15)
+                {
+
+                    pd = item.ProductName.Substring(0, 15);
+
+
+                }
+                else
+                {
+
+                    pd = item.ProductName;
+                }
+                sb.Append(pd.PadLeft(15));
+                sb.Append(item.Quantity.ToString().PadLeft(FIRST_COL_PAD));
+                sb.Append((item.Price).ToString("F", CultureInfo.InvariantCulture).PadLeft(SECOND_COL_PAD));
+                sb.AppendLine((string.Format("{0:0.00}", item.Amount)).ToString().PadLeft(THIRD_COL_PAD));
             }
+            sb.AppendLine("-".PadRight(60, '-'));
+            sb.Append("Sub Total:".PadLeft(13 + FIRST_COL_PAD + SECOND_COL_PAD));
+            sb.AppendLine(string.Format("{0:0.00}", total));
+            sb.AppendLine("VAT @ 17.50%: ".PadLeft(13 + FIRST_COL_PAD + SECOND_COL_PAD));
+            sb.AppendLine("=".PadRight(50, '='));
+            sb.AppendLine("Bill Total:".PadLeft(15 + FIRST_COL_PAD + SECOND_COL_PAD));
+
+            sb.AppendLine("=".PadRight(50, '='));
+
+
+            var printText = new PrintText(sb.ToString(), new Font(System.Drawing.FontFamily.GenericMonospace, 9, System.Drawing.FontStyle.Bold));
+            Graphics graphics = e.Graphics;
+            int startX = 0;
+            int startY = 0;
+            int Offset = 20;
+
+            graphics.DrawString(printText.Text, new Font(System.Drawing.FontFamily.GenericMonospace, 9, System.Drawing.FontStyle.Bold),
+                                new SolidBrush(System.Drawing.Color.Black), startX, startY + Offset);
+            Offset = Offset + 20;
         }
+
 
     }
 }
