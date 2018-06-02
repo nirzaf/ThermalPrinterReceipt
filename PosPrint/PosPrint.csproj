@@ -58,13 +58,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="PrintText.cs" />
-    <Compile Include="SalesReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SalesReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="BusinessSetup.xaml.cs">
+      <DependentUpon>BusinessSetup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LineDisplay.cs" />
+    <Compile Include="Model\Branch.cs" />
+    <Compile Include="Model\Business.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="PrintText.cs" />
+    <Page Include="BusinessSetup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,10 +102,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalesReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>SalesReport.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
