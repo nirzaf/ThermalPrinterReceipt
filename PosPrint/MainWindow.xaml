@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1915.6">
     <Grid>
-        
-        <DataGrid x:Name="dgCart" HorizontalAlignment="Left" Height="100" Margin="10,257,0,0" VerticalAlignment="Top" Width="775"/>
+
+        <DataGrid x:Name="dgCart" HorizontalAlignment="Left" Height="100" Margin="10,257,0,0" VerticalAlignment="Top" Width="1891"/>
         <TextBox x:Name="txtProduct" HorizontalAlignment="Left" Height="23" Margin="90,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="90,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Height="23" Margin="339,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -21,13 +21,14 @@
         <Button Content="Print Reciept" HorizontalAlignment="Left" Margin="670,377,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Content="Item Total" HorizontalAlignment="Left" Margin="407,379,0,0" VerticalAlignment="Top" Width="64"/>
         <Label Content="0.00" HorizontalAlignment="Left" Margin="476,379,0,0" VerticalAlignment="Top" Width="64 " Name="lbTotal"/>
+        <DockPanel>
         <Menu HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="795">
             <MenuItem Name="File" Header="_File">
                 <MenuItem Header="About">
-                    
+
                 </MenuItem>
             </MenuItem>
         </Menu>
-
+        </DockPanel>
     </Grid>
 </Window>

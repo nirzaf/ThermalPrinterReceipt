@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LineDisplay.cs" />
     <Compile Include="PrintText.cs" />
     <Compile Include="SalesReport.cs">
       <AutoGen>True</AutoGen>

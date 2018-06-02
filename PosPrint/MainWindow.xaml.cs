@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
@@ -61,39 +62,34 @@ namespace PosPrint
         public void ProvideContent(object sender, PrintPageEventArgs e)
         {
 
-            var receiptItems = Order.orders;
-            const int FIRST_COL_PAD = 20;
-            const int SECOND_COL_PAD = 7;
-            const int THIRD_COL_PAD = 20;
+            var cart = Order.orders;
 
-           
-            var sb = new StringBuilder();
-            sb.AppendLine("PosPrint Receipt Sample");
-            sb.AppendLine("==========================");
 
-            foreach (var item in receiptItems)
-            {
-                sb.Append(item.ProductName.PadRight(FIRST_COL_PAD));
-                sb.AppendLine((item.Quantity.ToString()).PadLeft(SECOND_COL_PAD));
-                sb.AppendLine(string.Format("GHC {0:0.00}", item.Price).PadLeft(THIRD_COL_PAD));
-            }
-
-            sb.AppendLine("=======================================================================");
-
-           var printText = new PrintText(sb.ToString(), new Font("Monospace Please...", 8));
+       
             Graphics graphics = e.Graphics;
-            int startX = 0;
-            int startY = 0;
-            int Offset = 20;
+            Font font = new Font("Courier New", 8);
+            //Draw Boundry
+            Rectangle bounds= new Rectangle();
+            bounds.X = 10;
+            bounds.Y = 10;
+            bounds.Offset(10, 10);
 
-            graphics.DrawString(printText.Text, new Font("Courier New", 8),
-                                new SolidBrush(Color.Black), startX, startY + Offset);
-            Offset = Offset + 20;
+            DrawReciept(cart, graphics, font, bounds);
         }
 
 
-
-    
+        void DrawReciept(List<Order> cart, Graphics g, Font font, Rectangle bounds)
+        {
+            foreach (var item in cart)
+            {
+                LineDisplay display = new LineDisplay(g, font, bounds);
+                display.WriteTwoColumnLine("User Name:", item.ProductName);
+                display.WriteTwoColumnLine("Full Name:", item.ProductDescribtion);
+                display.WriteTwoColumnLine("E-mail:", item.Quantity.ToString());
+                display.WriteTwoColumnLine("Phone:", item.Price.ToString());
+                display.WriteTwoColumnLine("Phone:", item.Amount.ToString());
+            }
+        }
 
     }
 }
